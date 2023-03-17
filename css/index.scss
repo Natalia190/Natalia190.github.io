@@ -100,7 +100,7 @@ body {
         line-height: 142%;
         text-align: center;
         color: #FFFFFF;
-        padding-bottom: 40px;
+        padding-bottom: 41px;
         max-width: 310px;
 
         @include for-phone-up {
@@ -148,14 +148,20 @@ body {
 
         @include for-desktop-up {
 
+            &:hover a {
+                color: #FFFFFF;
+            }
+
             &:hover {
                 background-color: #EFA501;
-                color: #FFFFFF;
+            }
+
+            &:active a {
+                color: #1B1F2B;
             }
 
             &:active {
                 background-color: #F8E6BE;
-                color: #1B1F2B;
             }
         }
 
@@ -232,6 +238,7 @@ body {
 
             @include for-desktop-up {
             text-decoration: underline;
+            text-underline-offset: 6px;
             }
         }
 
@@ -286,6 +293,7 @@ body {
         color: #1B1F2B;
         margin-right: 7px;
         margin-bottom: 10px;
+        cursor: pointer;
 
         @include for-tablet-landscape-up {
             font-size: 23px;
@@ -313,8 +321,10 @@ body {
         &:hover {
             text-decoration: none;
 
-            @include for-desktop-up {
+            @include for-big-desktop-up {
                 text-decoration: underline;
+                text-underline-offset: 10px;
+
             }
         }
 
@@ -322,6 +332,11 @@ body {
             color: #EFA501;
             outline: none;
             text-decoration: underline;
+            text-underline-offset: 4px;
+
+            @include for-big-desktop-up {           
+                text-underline-offset: 10px;
+            }
         }
     }
 
@@ -504,6 +519,16 @@ body {
     }
 }
 
+.card {
+    cursor: pointer;
+    &:hover button {
+        @include for-desktop-up {
+            background-color: #286562;
+            border-radius: 50px;
+            }
+    }
+}
+
 .card-title {
     font-family: 'Roboto';
     font-style: normal;
@@ -541,13 +566,6 @@ body {
     @include for-tablet-landscape-up {
         font-size: 23px;
         line-height: 122%;
-    }
-
-    &:hover {
-        @include for-desktop-up {
-        background-color: #286562;
-        border-radius: 50px;
-        }
     }
 
     &:active {
@@ -805,6 +823,7 @@ body {
 
     &__comment {
         height: 132px;
+        resize: none;
 
         @include for-tablet-landscape-up {
         height: 152px;
@@ -994,6 +1013,7 @@ body {
             line-height: 142%;
             color: #FFFFFF;
             justify-content: center;
+            cursor: pointer;
 
             @include for-tablet-landscape-up {
                 width: 235px;
@@ -1027,6 +1047,7 @@ body {
             line-height: 142%;
             color: #286562;
             justify-content: center;
+            cursor: pointer;
 
             @include for-tablet-landscape-up {
                 width: 235px;
@@ -1631,11 +1652,13 @@ body {
 
             &:hover {
                 text-decoration: underline;
+                text-underline-offset: 6px;
             }
 
             &:active {
                 color: #EFA501;
                 text-decoration: underline;
+                text-underline-offset: 6px;
             }
         }
     }
@@ -1876,11 +1899,13 @@ body {
         @include for-desktop-up {
             &:hover {
                 text-decoration: underline;
+                text-underline-offset: 6px;
             }
 
             &:active {
                 text-decoration: underline;
                 color: #EFA501;
+                text-underline-offset: 6px;
             }
         }
     }

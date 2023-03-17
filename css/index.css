@@ -171,7 +171,7 @@ body {
   line-height: 142%;
   text-align: center;
   color: #FFFFFF;
-  padding-bottom: 40px;
+  padding-bottom: 41px;
   max-width: 310px;
 }
 @media (min-width: 576px) {
@@ -221,13 +221,17 @@ body {
   }
 }
 @media (min-width: 1200px) {
+  .header__btn:hover a {
+    color: #FFFFFF;
+  }
   .header__btn:hover {
     background-color: #EFA501;
-    color: #FFFFFF;
+  }
+  .header__btn:active a {
+    color: #1B1F2B;
   }
   .header__btn:active {
     background-color: #F8E6BE;
-    color: #1B1F2B;
   }
 }
 .header__link {
@@ -287,6 +291,7 @@ body {
 @media (min-width: 1200px) {
   .navigation__link:hover {
     text-decoration: underline;
+    text-underline-offset: 6px;
   }
 }
 .navigation__numder {
@@ -333,6 +338,7 @@ body {
   color: #1B1F2B;
   margin-right: 7px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   .tour-list__item {
@@ -361,15 +367,22 @@ body {
 .tour-list__item:hover {
   text-decoration: none;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .tour-list__item:hover {
     text-decoration: underline;
+    text-underline-offset: 10px;
   }
 }
 .tour-list__item:active {
   color: #EFA501;
   outline: none;
   text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (min-width: 1400px) {
+  .tour-list__item:active {
+    text-underline-offset: 10px;
+  }
 }
 .tour-list__catalog {
   margin-bottom: 75px;
@@ -547,6 +560,16 @@ body {
   }
 }
 
+.card {
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
+  .card:hover button {
+    background-color: #286562;
+    border-radius: 50px;
+  }
+}
+
 .card-title {
   font-family: "Roboto";
   font-style: normal;
@@ -587,12 +610,6 @@ body {
   .card-btn button {
     font-size: 23px;
     line-height: 122%;
-  }
-}
-@media (min-width: 1200px) {
-  .card-btn button:hover {
-    background-color: #286562;
-    border-radius: 50px;
   }
 }
 @media (min-width: 1200px) {
@@ -849,6 +866,7 @@ body {
 }
 .form__comment {
   height: 132px;
+  resize: none;
 }
 @media (min-width: 992px) {
   .form__comment {
@@ -1029,6 +1047,7 @@ body {
   line-height: 142%;
   color: #FFFFFF;
   justify-content: center;
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   .form__btn-accept input {
@@ -1059,6 +1078,7 @@ body {
   line-height: 142%;
   color: #286562;
   justify-content: center;
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   .form__btn-reset input {
@@ -1628,10 +1648,12 @@ body {
 @media (min-width: 1200px) {
   .media__link:hover {
     text-decoration: underline;
+    text-underline-offset: 6px;
   }
   .media__link:active {
     color: #EFA501;
     text-decoration: underline;
+    text-underline-offset: 6px;
   }
 }
 
@@ -1864,9 +1886,11 @@ body {
 @media (min-width: 1200px) {
   .footer__link:hover {
     text-decoration: underline;
+    text-underline-offset: 6px;
   }
   .footer__link:active {
     text-decoration: underline;
     color: #EFA501;
+    text-underline-offset: 6px;
   }
 }/*# sourceMappingURL=index.css.map */
