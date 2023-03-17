@@ -321,10 +321,9 @@ body {
         &:hover {
             text-decoration: none;
 
-            @include for-big-desktop-up {
+            @include for-desktop-up {
                 text-decoration: underline;
                 text-underline-offset: 10px;
-
             }
         }
 
@@ -334,7 +333,7 @@ body {
             text-decoration: underline;
             text-underline-offset: 4px;
 
-            @include for-big-desktop-up {           
+            @include for-desktop-up {           
                 text-underline-offset: 10px;
             }
         }
