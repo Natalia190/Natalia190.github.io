@@ -851,32 +851,61 @@ body {
         }
 
         & label {
+            position: relative;
+            cursor: pointer;
             display: inline-flex;
+            align-items:flex-start;
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
             line-height: 142%;
             color: #1B1F2B;
-            margin-right: 27px;
+            margin-right: 26px;
 
             @include for-tablet-landscape-up {
                 font-size: 20px;
-            }
+                margin-right: 27px;
 
+            }
         }
-        & label i {
-            font-size:10px;  
-            opacity:0;
-            color: #1B1F2B;
+
+        & label::before {
+            content:'';
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 2px solid #1B1F2B;
+            margin-right: 11px;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 8.2px;
 
             @include for-tablet-landscape-up {
-                font-size: 13px;
+                padding: 11.5px;
             }
         }
 
-        & input:checked + label i {
-            opacity:1;
+        & input:checked + label:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 5.23px;
+            left: 5.23px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #1B1F2B;
+
+            @include for-tablet-landscape-up {
+                top: 6px;
+                left: 6px;
+                padding: 7px;
+            }
         }
+
+
+
     }
 
     &__checkbox {
@@ -917,6 +946,10 @@ body {
 
             @include for-tablet-landscape-up {
                 padding: 11px;
+                margin-right: 11px;
+            }
+
+            @include for-desktop-up {
                 margin-right: 19px;
             }
         }
@@ -1850,4 +1883,3 @@ body {
         }
     }
 }
-
