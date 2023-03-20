@@ -283,21 +283,12 @@ body {
         }
     }
 
-    &__item a{
+    &__item {
         display: inline-block;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 142%;
-        color: #1B1F2B;
         margin-right: 7px;
         margin-bottom: 10px;
-        cursor: pointer;
 
         @include for-tablet-landscape-up {
-            font-size: 23px;
-            line-height: 122%;
             margin-right: 27px;
             margin-bottom: 0;
         }
@@ -318,23 +309,38 @@ body {
             }
         }
 
-        &:hover {
-            text-decoration: none;
+        & a {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 142%;
+            color: #1B1F2B;
+            cursor: pointer;
 
-            @include for-desktop-up {
-                text-decoration: underline;
-                text-underline-offset: 10px;
+            @include for-tablet-landscape-up {
+                font-size: 23px;
+                line-height: 122%;
             }
-        }
 
-        &:active {
-            color: #EFA501;
-            outline: none;
-            text-decoration: underline;
-            text-underline-offset: 4px;
+            &:hover {
+                text-decoration: none;
 
-            @include for-desktop-up {           
-                text-underline-offset: 10px;
+                @include for-desktop-up {
+                    text-decoration: underline;
+                    text-underline-offset: 10px;
+                }
+            }
+
+            &:active {
+                color: #EFA501;
+                outline: none;
+                text-decoration: underline;
+                text-underline-offset: 4px;
+
+                @include for-desktop-up {           
+                    text-underline-offset: 10px;
+                }
             }
         }
     }
@@ -1882,4 +1888,14 @@ body {
             }
         }
     }
+}
+.link_active a {
+    color: #EFA501;
+    outline: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    @include for-desktop-up {           
+        text-underline-offset: 10px;
+    } 
 }

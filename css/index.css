@@ -328,40 +328,46 @@ body {
     margin-bottom: 106px;
   }
 }
-.tour-list__item a {
+.tour-list__item {
   display: inline-block;
+  margin-right: 7px;
+  margin-bottom: 10px;
+}
+@media (min-width: 992px) {
+  .tour-list__item {
+    margin-right: 27px;
+    margin-bottom: 0;
+  }
+}
+.tour-list__item:last-of-type {
+  margin-right: 0;
+}
+.tour-list__item:nth-of-type(3) {
+  margin-right: 0;
+}
+@media (min-width: 768px) {
+  .tour-list__item:nth-of-type(3) {
+    margin-right: 7px;
+  }
+}
+@media (min-width: 992px) {
+  .tour-list__item:nth-of-type(3) {
+    margin-right: 27px;
+  }
+}
+.tour-list__item a {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 142%;
   color: #1B1F2B;
-  margin-right: 7px;
-  margin-bottom: 10px;
   cursor: pointer;
 }
 @media (min-width: 992px) {
   .tour-list__item a {
     font-size: 23px;
     line-height: 122%;
-    margin-right: 27px;
-    margin-bottom: 0;
-  }
-}
-.tour-list__item a:last-of-type {
-  margin-right: 0;
-}
-.tour-list__item a:nth-of-type(3) {
-  margin-right: 0;
-}
-@media (min-width: 768px) {
-  .tour-list__item a:nth-of-type(3) {
-    margin-right: 7px;
-  }
-}
-@media (min-width: 992px) {
-  .tour-list__item a:nth-of-type(3) {
-    margin-right: 27px;
   }
 }
 .tour-list__item a:hover {
@@ -1861,5 +1867,17 @@ body {
     text-decoration: underline;
     color: #EFA501;
     text-underline-offset: 6px;
+  }
+}
+
+.link_active a {
+  color: #EFA501;
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (min-width: 1200px) {
+  .link_active a {
+    text-underline-offset: 10px;
   }
 }/*# sourceMappingURL=index.css.map */
