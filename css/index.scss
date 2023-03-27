@@ -1,6 +1,9 @@
 @import "reset";
 @import "media";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+html {
+    scroll-behavior:smooth;
+}
 body {
     font-family: 'Roboto';
     background-color: #F9F7F4;
@@ -126,11 +129,7 @@ body {
     &__btn {
         background: #FFFFFF;
         border-radius: 10px;
-        border: 0;
-        padding: 0;
-        width: 114px;
-        height: 33px;
-        font-family: 'Roboto';
+        padding: 5px 20px;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -142,8 +141,6 @@ body {
         @include for-tablet-landscape-up {
             font-size: 17px;
             margin-bottom: 119px;
-            width: 118px;
-            height: 34px;
         }
 
         @include for-desktop-up {
@@ -192,9 +189,15 @@ body {
     }
 
     &__logo {
+        max-width: 133px;
+        @include for-tablet-portrait-up {
+            max-width: 181.84px;
+        }
     }
 
     &__menu {
+        display: flex;
+        justify-content: space-between;
         
     }
 
@@ -233,6 +236,26 @@ body {
     &__link {
         text-decoration: none;
         color: #FFFFFF;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 142%;
+        color: #FFFFFF;
+        margin-right: 30px;
+        display: none;
+
+        @include for-tablet-landscape-up {
+            display: inline-block;
+        }
+
+
+        @include for-desktop-up {
+            margin-right: 50px;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
         
         &:hover {
 
@@ -241,11 +264,9 @@ body {
             text-underline-offset: 6px;
             }
         }
-
-
     }
 
-    &__numder {
+    &__numder a{
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -263,7 +284,7 @@ body {
 
     &__block-title {
         text-align: center;
-        margin-bottom: 29px;
+        margin-bottom: 25px;
 
         @include for-tablet-portrait-up {
             margin-bottom: 34px;
@@ -271,56 +292,49 @@ body {
     }
 
     &__nav {
-        text-align: center;
-    }
-
-    &__list {
-        margin-bottom: 40px;
-        display: inline-block;
+        margin-bottom: 44px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
         @include for-tablet-landscape-up {
-            margin-bottom: 106px;
-        }
-    }
-
-    &__item {
-        display: inline-block;
-        margin-right: 7px;
-        margin-bottom: 10px;
-
-        @include for-tablet-landscape-up {
-            margin-right: 27px;
-            margin-bottom: 0;
-        }
-      
-        &:last-of-type {
-        margin-right: 0;
+            padding-bottom: 106px;
+            flex-wrap: nowrap;
+            margin: 0 auto;
         }
 
-        &:nth-of-type(3) {
-            margin-right: 0;
-
-            @include for-tablet-portrait-up {
-                margin-right: 7px;
-            }
-
-            @include for-tablet-landscape-up {
-                margin-right: 27px;
-            }
-        }
 
         & a {
-            font-family: 'Roboto';
+            margin-right: 10px;
             font-style: normal;
             font-weight: 700;
             font-size: 16px;
-            line-height: 142%;
             color: #1B1F2B;
             cursor: pointer;
+            line-height: 205%;
 
             @include for-tablet-landscape-up {
+                margin-right: 30.5px;
+                margin-bottom: 0;
                 font-size: 23px;
                 line-height: 122%;
+
+            }
+        
+            &:last-of-type {
+            margin-right: 0;
+            }
+
+            &:nth-of-type(3) {
+                margin-right: 0;
+
+                @include for-phone-up {
+                    margin-right: 10px;
+                }
+
+                @include for-tablet-landscape-up {
+                    margin-right: 30.5px;
+                }
             }
 
             &:hover {
@@ -343,6 +357,7 @@ body {
                 }
             }
         }
+        
     }
 
     &__catalog {
@@ -475,7 +490,6 @@ body {
     }
 }
 .block-title {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     color: #1B1F2B;
@@ -503,7 +517,6 @@ body {
 }
 
 .card-title {
-    font-family: 'Roboto';
     font-style: normal;
     font-size: 23px;
     font-weight: 500;
@@ -518,14 +531,12 @@ body {
     }
 }
 .card-subtitle {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     color: #FFFFFF;
 
 }
 .card-btn a {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -742,8 +753,23 @@ body {
 
         input[type="date"] {
             resize: none;
+
         }
 
+        input[type="date"]::before { 
+            content: attr(data-placeholder);
+            width: 100%;
+            color: #A6A6A6;
+        }
+        
+        input[type="date"]:focus::before,
+        input[type="date"]:valid::before { 
+            display: none; 
+        }
+
+        input[type=date]::-webkit-calendar-picker-indicator {
+            opacity: 0;
+        }
 
         label {
             padding-bottom: 8px;
@@ -825,7 +851,7 @@ body {
             font-size: 20px;
             line-height: 142%;
             color: #1B1F2B;
-            padding-bottom: 8.5px;
+            padding-bottom: 6px;
         }
 
     }
@@ -1175,7 +1201,6 @@ body {
     }
 
     &__review {
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
@@ -1539,7 +1564,6 @@ body {
     &__list {
         list-style-type: "\2022";
         padding-inline-start: 9px;
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -1599,33 +1623,27 @@ body {
     }
 
     &__media {
-    }
-}
-
-
-.media {
-
-    &__list {
         display: none;
 
         @include for-tablet-landscape-up {
         display: inline-flex;
         }
     }
+}
 
-    &__item {
-        &:not(:last-child) {
-            margin-right: 36px;
-        }
-    }
+
+.media {
 
     &__link {
         color: #FFFFFF;
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
         line-height: 142%;
+
+        &:not(:last-child) {
+            margin-right: 36px;
+        }
 
         @include for-desktop-up {
 
@@ -1691,7 +1709,6 @@ body {
     }
 
     &__text {
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 500;
         font-size: 23px;
@@ -1712,7 +1729,6 @@ body {
     }
 
     &__mail {
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -1780,7 +1796,6 @@ body {
     }
 
     &__text {
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -1797,10 +1812,6 @@ body {
     }
 
     &__media {
-    }
-
-    &__list {
-
         margin-top: 11px;
 
         @include for-tablet-landscape-up {
@@ -1810,7 +1821,6 @@ body {
 
     &__item {
         display: inline-block;
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -1889,13 +1899,13 @@ body {
         }
     }
 }
-.link_active a {
+a.link_active {
     color: #EFA501;
     outline: none;
     text-decoration: underline;
     text-underline-offset: 4px;
 
-    @include for-desktop-up {           
+    @include for-tablet-landscape-up {           
         text-underline-offset: 10px;
     } 
 }
