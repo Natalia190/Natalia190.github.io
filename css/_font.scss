@@ -1,0 +1,19 @@
+$h2: 5.9rem;
+$h3: 3.5rem;
+$p-big: 2.3rem;
+$p-normal: 2rem;
+$p-small: 1.7rem;
+$m-h2: 3.4rem;
+$m-h3: 2.3rem;
+$m-p-normal: 1.6rem;
+$color-primary: #FFFFFF;
+$color-secondary: #1B1F2B;
+$color-subtitle: #A6A6A6;
+
+@mixin standardFontStyle ($weight, $size, $color) {
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+}
+
