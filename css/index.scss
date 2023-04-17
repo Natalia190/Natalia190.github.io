@@ -1,25 +1,16 @@
 @import "reset";
 @import "media";
+@import "font";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-$h2: 3.6875rem;
-$h3: 2.1875rem;
-$p-big: 1.4375rem;
-$p-normal: 1.25rem;
-$p-small: 1.0625rem;
-$m-h2: 2.125rem;
-$m-h3: 1.4375rem;
-$color-primary: #FFFFFF;
-$color-secondary:#1B1F2B;
-$color-subtitle: #A6A6A6;
 
 html {
     scroll-behavior:smooth;
+    font-size: 10px;
 }
 body {
     font-family: 'Roboto';
     background-color: #F9F7F4;
-    width: 100%
+    width: 100%;
 }
 
 .header {
@@ -57,37 +48,34 @@ body {
     }
 
     &__title {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 2.125rem;
         line-height: 109%;
         letter-spacing: 0.02em;
-        color: $color-primary;
         text-align: center;
         padding: 0 0 41px 0;
         max-width: 100%;
         margin:0 auto;
 
+        @include standardFontStyle (700, 3.4rem, $color-primary);
+
         @include for-phone-up {
-            font-size: 3.75rem;
+            font-size: 7rem;
         }
 
         @include for-tablet-portrait-up {
             padding: 0 0 51px 0;            
-            font-size: 6rem;
+            font-size: 9.6rem;
         }
 
         
     }
 
     &__subtitle {
-        font-style: normal;
-        font-weight: 400;
         line-height: 142%;
         text-align: center;
-        color: $color-primary;
         padding: 0 0 41px 0;
         max-width: 86.11%;
+
+        @include standardFontStyle (400, $m-p-normal, $color-primary);
 
         @include for-tablet-landscape-up {
             font-size: $p-normal;
@@ -101,12 +89,11 @@ body {
         background: $color-primary;
         border-radius: 10px;
         padding: 5px 20px;
-        font-style: normal;
-        font-weight: 400;
         line-height: 142%;
         letter-spacing: -0.01em;
-        color: #1B1F2B;
         margin: 0 0 52px 0;
+
+        @include standardFontStyle (400, $m-p-normal, $color-secondary);
 
         @include for-tablet-landscape-up {
             font-size: $p-small;
@@ -157,9 +144,9 @@ body {
     }
 
     &__logo {
-        max-width: 8.3125rem;
+        max-width: 13.3rem;
         @include for-tablet-portrait-up {
-            max-width: 11.365rem;
+            max-width: 18.18rem;
         }
     }
 
@@ -183,13 +170,11 @@ body {
 
     &__link {
         text-decoration: none;
-        color: $color-primary;
-        font-style: normal;
-        font-weight: 400;
-        font-size: $p-normal;
         line-height: 142%;
         margin: 0 30px 0 0;
         display: none;
+
+        @include standardFontStyle (400, $p-normal, $color-primary);
 
         @include for-tablet-landscape-up {
             display: inline-block;
@@ -214,10 +199,9 @@ body {
     }
 
     &__numder a{
-        font-style: normal;
-        font-weight: 400;
         line-height: 142%;
-        color: $color-primary;
+
+        @include standardFontStyle (400, $m-p-normal, $color-primary);
 
         @include for-tablet-portrait-up {
             font-size: $p-normal;
@@ -252,11 +236,10 @@ body {
 
         & a {
             margin: 0 10px 0 0;
-            font-style: normal;
-            font-weight: 700;
-            color: $color-secondary;
             cursor: pointer;
             line-height: 205%;
+
+            @include standardFontStyle (700, $m-p-normal, $color-secondary);
 
             @include for-tablet-landscape-up {
                 margin: 0 30.5px 0 0;
@@ -313,7 +296,7 @@ body {
 
     &__row {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(19.875rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(31.8rem, 1fr));
         gap: 18px;
 
         @include for-desktop-up {
@@ -322,7 +305,7 @@ body {
     }
 
     &__card {
-        height: 19.875rem;
+        height: 31.8rem;
         position: relative;
         overflow: hidden;
         border-radius: 20px;
@@ -330,7 +313,7 @@ body {
 
         @include for-tablet-landscape-up {
             border-radius: 50px;
-            height: 33.1875rem;
+            height: 53.1rem;
         }
 
         & img {
@@ -378,7 +361,6 @@ body {
 
         @include for-tablet-landscape-up {
             margin: 0 0 323px 50px;
-            font-size: $p-small;
             letter-spacing: -0.01em;
         }
 
@@ -405,13 +387,11 @@ body {
     }
 }
 .block-title {
-    font-style: normal;
-    font-weight: 700;
-    color: $color-secondary;
-    font-size: $m-h2;
     letter-spacing: 0.02em;
     text-align: center;
     line-height: 112%;
+
+    @include standardFontStyle (700, $m-h2, $color-secondary);
 
     @include for-tablet-landscape-up{
         font-size: $h2;
@@ -432,12 +412,10 @@ body {
 }
 
 .card-title {
-    font-style: normal;
-    font-size: 1.4375rem;
-    font-weight: 500;
     line-height: 120%;
-    color: $color-primary;
     letter-spacing: 0.044em;
+
+    @include standardFontStyle (500, $m-h3, $color-primary);
 
     @include for-tablet-landscape-up {
         font-size: $h3;
@@ -446,17 +424,31 @@ body {
     }
 }
 .card-subtitle {
-    font-style: normal;
-    font-weight: 400;
-    color: $color-primary;
+    line-height: 142%;
+
+    @include standardFontStyle (400, $m-p-normal, $color-primary);
+
+    @include for-tablet-landscape-up {
+        font-size: $p-normal;
+    }
+
+    &_s {
+        line-height: 142%;
+
+        @include standardFontStyle (400, $m-p-normal, $color-primary);
+    
+        @include for-tablet-landscape-up {
+            font-size: $p-small;
+        }
+    }
 
 }
+
 .card-btn a {
-    font-style: normal;
-    font-weight: 700;
     line-height: 142%;
-    color: $color-primary;
     background-color: rgba(28,28,28,0);
+
+    @include standardFontStyle(700, $m-p-normal, $color-primary);
 
     @include for-tablet-landscape-up {
         font-size: $p-big;
@@ -499,11 +491,11 @@ body {
     &__block-subtitle {
         padding: 0 0 40px 0;
         margin: 0 auto;
-        max-width: 19.875rem;
+        max-width: 31.8rem;
 
         @include for-tablet-landscape-up {
             padding: 0 0 100px 0;
-            max-width: 25rem;
+            max-width: 40rem;
         }
     }
 
@@ -529,6 +521,7 @@ body {
     line-height: 142%;
     text-align: center;
     color: $color-subtitle;
+    font-size: $m-p-normal;
 
     @include for-tablet-landscape-up {
         font-size: $p-normal;
@@ -573,20 +566,20 @@ body {
         margin: 0 0 29.7px 0;
 
         @include for-tablet-landscape-up {
-            margin: 0 0 32px 0;
+            margin: 0 0 31px 0;
         }
 
         &_50 {
             width: 100%;
-            margin: 0 0 30.5px 0;    
+            margin: 0 0 31px 0;    
 
             @include for-tablet-portrait-up {
-                margin: 0 9.5px 32px 9.5px;
+                margin: 0 9.5px 33px 9.5px;
                 max-width: calc(50% - 19px);
             }
 
             @include for-big-desktop-up {
-                    margin: 0 14.5px 32px 14.5px;
+                    margin: 0 14.5px 34px 14.5px;
                     max-width: calc(50% - 29px);
             } 
         }
@@ -600,17 +593,15 @@ body {
             resize: vertical;
             background-color:#F9F7F4;
             box-sizing: border-box;
-            padding: 9.5px;
+            padding: 10.5px;
             border-radius: 10px;
             border: 1px solid #F4F0E9;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 142%;
             appearance: none;
-            font-size: 1rem;
+
+            @include standardFontStyle(400, $m-p-normal, $color-subtitle);
 
             @include for-tablet-landscape-up {
-                padding: 19px;
+                padding: 20.5px;
                 font-size: $p-normal;
             }
             
@@ -626,37 +617,27 @@ body {
              }
         }
 
+        input:valid, input:focus, textarea:valid, textarea:focus {
+            color: $color-secondary;
+        }
+
         textarea {
             resize: none;
         }
 
         input[type="date"] {
             resize: none;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
 
-        }
-
-        input[type="date"]::before { 
-            content: attr(data-placeholder);
-            width: 100%;
-            color: #A6A6A6;
-        }
-        
-        input[type="date"]:focus::before,
-        input[type="date"]:valid::before { 
-            display: none; 
-        }
-
-        input[type=date]::-webkit-calendar-picker-indicator {
-            opacity: 0;
         }
 
         label {
             padding: 0 0 8px 0;
             display: inline-block;
-            font-style: normal;
-            font-weight: 400;
             line-height: 142%;
-            color: $color-secondary;
+
+            @include standardFontStyle(400, $m-p-normal, $color-secondary);
 
             @include for-tablet-landscape-up {
                 font-size: $p-normal;
@@ -665,13 +646,13 @@ body {
 
         select:invalid {
             color: gray;
-            padding: 9.5px;
+            padding: 13px 10px;
             background-image: url(../image/icons/Rectangle\ 34\ \(Stroke\).svg);
             background-repeat: no-repeat;
             background-position: 95% 50%;
 
             @include for-tablet-landscape-up {
-                padding:19px 20px;
+                padding:22px 20px;
             }
 
         }
@@ -684,19 +665,17 @@ body {
             resize: vertical;
             background-color:#F9F7F4;
             box-sizing: border-box;
-            padding: 10px;
+            padding: 13px;
             border-radius: 11.5px;
             border: 1px solid #F4F0E9;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 142%;
             appearance: none;
             cursor: pointer;
-            font-size: 1rem;
+
+            @include standardFontStyle (400, $m-p-normal, $color-secondary);
 
             @include for-tablet-landscape-up {
                 font-size: $p-normal;
-                padding: 19px 20px;
+                padding: 22px 20px;
             }
 
             &:hover {
@@ -706,20 +685,18 @@ body {
     }
 
     &__comment {
-        height: 8.25rem;
+        height: 13.2rem;
 
         @include for-tablet-landscape-up {
-        height: 9.5rem;
+        height: 15.2rem;
         }
     }
 
     &__text {
-
-        font-style: normal;
-        font-weight: 400;
         line-height: 142%;
-        color: $color-secondary;
         padding: 0 0 9.5px 0;
+
+        @include standardFontStyle(400, $m-p-normal, $color-secondary);
 
         @include for-tablet-landscape-up {
             font-style: normal;
@@ -728,12 +705,11 @@ body {
             line-height: 142%;
             padding: 0 0 7px 0;
         }
-
     }
 
     &__radio-area {
-        width:1.25rem;
-        height:1.25rem;
+        width: 2rem;
+        height: 2rem;
         display:inline-block;
         border:2px solid #1B1F2B;
         text-align:center;
@@ -743,8 +719,8 @@ body {
         border-radius: 50%;
 
         @include for-tablet-landscape-up {
-            width:26px;
-            height:26px;
+            width:2.6rem;
+            height:2.6rem;
             margin-right: 11px;
             line-height: 118.75%; 
         }
@@ -761,15 +737,14 @@ body {
             cursor: pointer;
             display: inline-flex;
             align-items:flex-start;
-            font-style: normal;
-            font-weight: 400;
             line-height: 142%;
-            color: $color-secondary;
             margin: 0 26px 0 0;
+
+            @include standardFontStyle(400, $m-p-normal, $color-secondary);
 
             @include for-tablet-landscape-up {
                 font-size: $p-normal;
-                margin: 0 27px 0 0;
+                margin: 0 27px 2px 0;
 
             }
         }
@@ -784,10 +759,10 @@ body {
             position: relative;
             cursor: pointer;
             border-radius: 50%;
-            padding: 0.5125rem;
+            padding: 0.82rem;
 
             @include for-tablet-landscape-up {
-                padding: 0.7188rem;
+                padding: 1.15rem;
             }
         }
 
@@ -795,22 +770,19 @@ body {
             content: '';
             display: block;
             position: absolute;
-            top: 0.3269rem;
-            left: 0.3269rem;
-            width: 0.5625rem;
-            height: 0.5625rem;
+            top: 0.52rem;
+            left: 0.52rem;
+            width: 0.9rem;
+            height: 0.9rem;
             border-radius: 50%;
             background-color: #1B1F2B;
 
             @include for-tablet-landscape-up {
-                top: 0.375rem;
-                left: 0.375rem;
-                padding: 0.4375rem;
+                top: 0.6rem;
+                left: 0.6rem;
+                padding: 0.7rem;
             }
         }
-
-
-
     }
 
     &__checkbox {
@@ -828,7 +800,9 @@ body {
           font-style: normal;
           font-weight: 400;
           line-height: 142%;
-          color: #A6A6A6;
+          font-size: $m-p-normal;
+
+          @include standardFontStyle(400, $m-p-normal, $color-subtitle);
 
           @include for-tablet-landscape-up {
             font-size: $p-small;
@@ -846,10 +820,10 @@ body {
             position: relative;
             cursor: pointer;
             border-radius: 2px;
-            padding: 0.5188rem;
+            padding: 0.83rem;
 
             @include for-tablet-landscape-up {
-                padding: 0.6875rem;
+                padding: 1.1rem;
                 margin: 0 11px 0 0;
             }
 
@@ -862,19 +836,19 @@ body {
           content: '';
           display: block;
           position: absolute;
-          top: 5px;
-          left: 8px;
-          width: 0.3125rem;
-          height: 0.5rem;
+          top: 0.5rem;
+          left: 0.8rem;
+          width: 0.5rem;
+          height: 0.8rem;
           border: solid #1B1F2B;
           border-width: 0 2px 2px 0;
           transform: rotate(45deg);
 
             @include for-tablet-landscape-up {
-                top: 0.375rem;
-                left: 0.625rem;
-                width: 0.375rem;
-                height: 0.6875rem;
+                top: 0.6rem;
+                left: 1rem;
+                width: 0.6rem;
+                height: 1.1rem;
             }
         }
       
@@ -882,10 +856,9 @@ body {
 
     &__link {
         text-decoration: none;
-        font-style: normal;
-        font-weight: 400;
         line-height: 142%;
-        color: $color-secondary;
+
+        @include standardFontStyle(400, $m-p-normal, $color-secondary);
 
         @include for-tablet-landscape-up {
             font-size: $p-small;
@@ -921,21 +894,19 @@ body {
         }
         
         input {
-            width: 8.375rem;
-            height: 2.9375rem;
+            width: 13.4rem;
+            height: 4.7rem;
             background: #286562;
             border-radius: 10px;
-            font-style: normal;
-            font-weight: 400;
             line-height: 142%;
-            color: #FFFFFF;
             justify-content: center;
             cursor: pointer;
-            font-size: 1rem;
+
+            @include standardFontStyle(400, $m-p-normal, $color-primary);
 
             @include for-tablet-landscape-up {
-                width: 14.6875rem;
-                height: 3.625rem;
+                width: 23.5rem;
+                height: 5.8rem;
                 font-size: $p-normal;
             }
 
@@ -955,21 +926,19 @@ body {
         display: flex;
 
         input {
-            width: 8.375rem;
-            height: 2.9375rem;
+            width: 13.4rem;
+            height: 4.7rem;
             background: #E0F0E5;
             border-radius: 10px;
-            font-style: normal;
-            font-weight: 400;
             line-height: 142%;
-            color: #286562;
             justify-content: center;
             cursor: pointer;
-            font-size: 1rem;
+
+            @include standardFontStyle(400, $m-p-normal, #286562);
 
             @include for-tablet-landscape-up {
-                width: 14.6875rem;
-                height: 3.625rem;
+                width: 23.5rem;
+                height: 5.8rem;
                 font-size: $p-normal;
             }
 
@@ -1062,12 +1031,11 @@ body {
     }
 
     &__review {
-        font-style: normal;
-        font-weight: 700;
         line-height: 142%;
-        color: $color-secondary;
         flex: 0 0 3;
         padding: 21px 20px 42px 20px;
+
+        @include standardFontStyle(700, $m-p-normal, $color-secondary);
 
         @include for-tablet-landscape-up {
             font-size: $p-big;
@@ -1112,12 +1080,10 @@ body {
     }
 
     &__name {
-        font-style: normal;
-        font-weight: 700;
-        font-size: $m-h3;
         line-height: 120%;
-        color: $color-secondary;
         letter-spacing: 0.04em;
+
+        @include standardFontStyle(700, $m-h3, $color-secondary);
 
         @include for-tablet-landscape-up {
             font-weight: 500;
@@ -1128,12 +1094,11 @@ body {
     }
 
     &__tour {
-        font-style: normal;
-        font-weight: 400;
         line-height: 142%;
         letter-spacing: -0.01em;
-        color: #A6A6A6;
         padding-top: 8px;
+
+        @include standardFontStyle(400, $m-p-normal, $color-subtitle);
 
         @include for-tablet-landscape-up {
             font-size: $p-small;
@@ -1144,7 +1109,7 @@ body {
         flex: 1 15.306%;
 
         & img {
-            max-width: 4.6875rem;
+            max-width: 7.5rem;
             border-radius: 50%;
         }
     }
@@ -1156,7 +1121,7 @@ body {
         padding:0 0 20px 0;
 
         @include for-tablet-landscape-up {
-            padding: 0 0 29px 0;
+            padding: 0 0 30px 0;
         }
     }
     
@@ -1248,35 +1213,24 @@ body {
 
     &__img {
 
-        &_l {
-            height: 6.875rem;
+            height: 11rem;
             object-fit: cover;
             border-radius: 20px;
             width: 100%;
 
             @include for-phone-up {
-                height: 12.5rem;
+                height: 20rem;
             }
 
             @include for-tablet-landscape-up {
-                height: 18.75rem;
+                height: 30rem;
                 border-radius: 50px;
             }
-        }
 
         &_s {
-            height: 6.875rem;
-            object-fit: cover;
-            border-radius: 20px;
-            width: 100%;
-    
-            @include for-phone-up {
-                height: 12.5rem;
-            }
 
             @include for-tablet-landscape-up {
-                height: 18.8125rem;
-                border-radius: 50px;
+                height: 30.1rem;
             }
 
         }
@@ -1349,14 +1303,14 @@ body {
         overflow: hidden;
         position: relative;
         border-radius: 20px;
-        height: 28.4375rem;
+        height: 45.5rem;
         background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.2) 100%);
         display: flex;
         flex-direction: column;
         margin: 10px 0 10px 0;
 
         @include for-tablet-landscape-up {
-            height: 35.4375rem;
+            height: 56.7rem;
         }
 
         @include for-tablet-landscape-up {
@@ -1393,7 +1347,7 @@ body {
     }
 
     &__card-title {
-        max-width: 9.375rem;
+        max-width: 15rem;
         margin: 31px 0 21.5px 30px;
 
         @include for-tablet-landscape-up {
@@ -1405,11 +1359,10 @@ body {
     &__card-subtitle {
         margin: 0 0 0 30px;
         line-height: 142%;
-        max-width: 31.25rem;
+        max-width: 50rem;
 
         @include for-tablet-landscape-up {
-            font-size: $p-normal;
-            max-width: 34.6875rem;
+            max-width: 55.5rem;
             margin: 0 0 0 60px;
         }
     }
@@ -1417,15 +1370,11 @@ body {
     &__list {
         list-style-type: "\2022";
         padding-inline-start: 9px;
-        font-style: normal;
-        font-weight: 400;
         line-height: 142%;
-        color: $color-primary;
         margin: 24px 0 0 6px;
 
         @include for-tablet-landscape-up {
             padding-inline-start: 12px;
-            font-size: $p-normal;
             margin: 27px 0 0 6px;
         }
 }
@@ -1480,11 +1429,9 @@ body {
 .media {
 
     &__link {
-        color: $color-primary;
-        font-style: normal;
-        font-weight: 400;
-        font-size: $p-normal;
         line-height: 142%;
+
+        @include standardFontStyle(400, $p-normal, $color-primary);
 
         &:not(:last-child) {
             margin-right: 36px;
@@ -1520,7 +1467,7 @@ body {
         align-items: center;
 
         @include for-tablet-landscape-up {
-            max-width: 48.1875rem;
+            max-width: 77.1rem;
             flex-direction: row;
             align-items: flex-start;
         }
@@ -1529,12 +1476,12 @@ body {
     &__img {
 
         & img {
-        max-width: 8.125rem;
-        height: 8.3125rem;
+        max-width: 13rem;
+        height: 13.3rem;
         border-radius: 20px;
 
             @include for-tablet-landscape-up {
-                max-width: 23.125rem;
+                max-width: 37rem;
                 border-radius: 50px;
                 height: auto;
             }
@@ -1544,7 +1491,7 @@ body {
     &__body {
         display: flex;
         flex-direction: column;
-        max-width: 18.1875rem;
+        max-width: 29.1rem;
         margin: 0 auto;
 
         @include for-tablet-landscape-up {
@@ -1554,14 +1501,12 @@ body {
     }
 
     &__text {
-        font-style: normal;
-        font-weight: 500;
-        font-size: $m-h3;
-        color: $color-secondary;
         line-height: 120%;
         margin: 31px 0 0 0;
         letter-spacing: 0.04em;
         text-align: center;
+
+        @include standardFontStyle(500, $m-h3, $color-secondary);
 
         @include for-tablet-landscape-up {
             margin: 104px 0 0 30px;
@@ -1574,12 +1519,11 @@ body {
     }
 
     &__mail {
-        font-style: normal;
-        font-weight: 400;
-        line-height: 142%;
-        color: $color-subtitle;
         text-align: center;
         margin: 20px 0 0 0;
+        line-height: 142%;
+
+        @include standardFontStyle(400, $m-p-normal, $color-subtitle);
 
         @include for-tablet-landscape-up {
             margin: 21px 0 0 30px;
@@ -1605,10 +1549,10 @@ body {
 }
 .footer {
     background-color: #F4F0E9;
-    height: 5.9375rem;
+    height: 9.5rem;
 
     @include for-tablet-landscape-up {
-        height: 5.5rem;
+        height: 8.8rem;
     }
 
     &__wrapper {
@@ -1635,12 +1579,11 @@ body {
     }
 
     &__text {
-        font-style: normal;
-        font-weight: 400;
         line-height: 142%;
-        color: $color-subtitle;
         margin: 21px 0 0 0;
         text-align: center;
+
+        @include standardFontStyle(400, $m-p-normal, $color-subtitle);
         
         @include for-tablet-landscape-up {
             font-size: $p-normal;
@@ -1659,23 +1602,23 @@ body {
 
     &__item {
         display: inline-block;
-        font-style: normal;
-        font-weight: 400;
+
+        @include standardFontStyle(400, $m-p-normal, $color-secondary);
 
         @include for-tablet-landscape-up{
             font-size: $p-normal;
         }
 
         &:first-child {
-            margin: 0 22px 0 0;
+            margin: 0 24px 0 0;
 
             @include for-tablet-landscape-up {
-                margin: 0 34.5px 0 0;
+                margin: 0 36px 0 0;
             }
         }
 
         &_l {
-            margin: 0 14px 0 0;
+            margin: 0 16px 0 0;
 
             @include for-tablet-landscape-up {
                 margin: 0 27px 0 0;
@@ -1684,31 +1627,31 @@ body {
     }
 
     &__inst {
-        max-width: 0.6731rem;
+        max-width: 1.08rem;
         margin: 4px 6.54px 0 7.63px;
 
         @include for-tablet-landscape-up {
-            max-width: 0.875rem;
+            max-width: 1.4rem;
             margin: 3px 12px 0 0;
         }
     }
 
     &__fb {
-        max-width: 0.3844rem;
+        max-width: 0.62rem;
         margin: 2px 8.85px 0 0;
 
         @include for-tablet-landscape-up {
-            max-width: 0.5rem;
+            max-width: 0.8rem;
             margin: 1px 15px 0 0;
         }
     }
     
     &__vk {
-        max-width: 0.9613rem;
+        max-width: 1.54rem;
         margin: 6px 6.54px 0 0;
 
         @include for-tablet-landscape-up {
-            max-width: 1.25rem;
+            max-width: 2rem;
             margin: 6px 12px 0 0;
         }
     }
