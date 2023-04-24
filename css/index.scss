@@ -34,10 +34,10 @@ body {
     }
 
     &__content {
-        margin: 0 0 76px 0;
+        margin-bottom: 76px;
 
         @include for-tablet-portrait-up {
-            margin: 0 0 135px 0;
+            margin-bottom: 135px;
         }
     }
 
@@ -51,7 +51,7 @@ body {
         line-height: 109%;
         letter-spacing: 0.02em;
         text-align: center;
-        padding: 0 0 41px 0;
+        padding-bottom: 41px;
         max-width: 100%;
         margin:0 auto;
 
@@ -61,9 +61,9 @@ body {
             font-size: 7rem;
         }
 
-        @include for-tablet-portrait-up {
-            padding: 0 0 51px 0;            
+        @include for-tablet-portrait-up {          
             font-size: 9.6rem;
+            padding-bottom: 51px;
         }
 
         
@@ -72,7 +72,7 @@ body {
     &__subtitle {
         line-height: 142%;
         text-align: center;
-        padding: 0 0 41px 0;
+        padding-bottom: 41px;
         max-width: 86.11%;
 
         @include standardFontStyle (400, $m-p-normal, $color-primary);
@@ -80,7 +80,7 @@ body {
         @include for-tablet-landscape-up {
             font-size: $p-normal;
             max-width: 48.57%;
-            padding: 0 0 49px 0;
+            padding-bottom: 49px;
         }
 
     }
@@ -91,13 +91,13 @@ body {
         padding: 5px 20px;
         line-height: 142%;
         letter-spacing: -0.01em;
-        margin: 0 0 52px 0;
+        margin-bottom: 52px;
 
         @include standardFontStyle (400, $m-p-normal, $color-secondary);
 
         @include for-tablet-landscape-up {
             font-size: $p-small;
-            margin: 0 0 119px 0;
+            margin-bottom: 119px;
         }
 
         @include for-desktop-up {
@@ -107,7 +107,7 @@ body {
             }
 
             &:hover {
-                background-color: #EFA501;
+                background-color: $color-active;
             }
 
             &:active a {
@@ -171,7 +171,7 @@ body {
     &__link {
         text-decoration: none;
         line-height: 142%;
-        margin: 0 30px 0 0;
+        margin-right: 30px;
         display: none;
 
         @include standardFontStyle (400, $p-normal, $color-primary);
@@ -182,7 +182,7 @@ body {
 
 
         @include for-desktop-up {
-            margin: 0 50px 0 0;
+            margin-right: 50px;
         }
 
         &:last-of-type {
@@ -214,35 +214,35 @@ body {
 
     &__block-title {
         text-align: center;
-        margin: 0 0 25px 0;
+        margin-bottom: 25px;
 
         @include for-tablet-portrait-up {
-            margin: 0 0 34px 0;
+            margin-bottom: 34px;
         }
     }
 
     &__nav {
-        padding: 0 0 45px 0;
+        padding-bottom: 45px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
 
         @include for-tablet-landscape-up {
-            padding: 0 0 106px 0;
+            padding-bottom: 106px;
             flex-wrap: nowrap;
             margin: 0 auto;
         }
 
 
         & a {
-            margin: 0 10px 0 0;
+            margin-right: 10px;
             cursor: pointer;
             line-height: 205%;
 
             @include standardFontStyle (700, $m-p-normal, $color-secondary);
 
             @include for-tablet-landscape-up {
-                margin: 0 30.5px 0 0;
+                margin-right: 30.5px;
                 font-size: $p-big;
                 line-height: 122%;
             }
@@ -255,11 +255,11 @@ body {
                 margin: 0;
 
                 @include for-phone-up {
-                    margin: 0 10px 0 0;
+                    margin-right: 10px;
                 }
 
                 @include for-tablet-landscape-up {
-                    margin: 0 30.5px 0 0;
+                    margin-right: 30.5px;
                 }
             }
 
@@ -273,7 +273,7 @@ body {
             }
 
             &:active {
-                color: #EFA501;
+                color: $color-active;
                 outline: none;
                 text-decoration: underline;
                 text-underline-offset: 4px;
@@ -287,10 +287,10 @@ body {
     }
 
     &__catalog {
-        margin: 0 0 76px 0;
+        margin-bottom: 76px;
 
         @include for-tablet-landscape-up {
-            margin: 0 0 134px 0;
+            margin-bottom: 134px;
         }
     }
 
@@ -336,10 +336,10 @@ body {
     }
 
     &__info {
-        margin: 26px 0 0 0;
+        margin-top: 26px;
 
         @include for-tablet-landscape-up {
-            margin: 50px 0 0 0;
+            margin-top: 50px;
         }
     }
 
@@ -373,7 +373,7 @@ body {
         background-position: 89% 50%;
         background-image: url(../image/icons/Vector.svg);
         background-repeat: no-repeat;
-        padding: 0 51px 0 0;
+        padding-right: 51px;
         bottom: 25px;
         left: 25px;
         position: absolute;
@@ -457,7 +457,7 @@ body {
 
     &:active {
         @include for-desktop-up {
-            background-color: #EFA501;
+            background-color: $color-active;
         }
     }
 
@@ -479,22 +479,20 @@ body {
 .tour-creation {
 
     &__block-title {
-        margin: 0 0 20px 0;
+        margin-bottom: 20px;
 
         @include for-tablet-landscape-up {
-            margin: 0 0 30px 0;
+            margin-bottom: 30px;
         }
-
-
     }
 
     &__block-subtitle {
-        padding: 0 0 40px 0;
+        padding-bottom: 40px;
         margin: 0 auto;
         max-width: 31.8rem;
 
         @include for-tablet-landscape-up {
-            padding: 0 0 100px 0;
+            padding-bottom: 100px;
             max-width: 40rem;
         }
     }
@@ -502,15 +500,15 @@ body {
     &__form {
         background-color: $color-primary;
         border-radius: 30px;
-        margin: 0 0 76px 0;
+        margin-bottom: 76px;
 
         @include for-tablet-landscape-up {
             border-radius: 50px;
-            margin: 0 0 135px 0;
+            margin-bottom: 135px;
         }
 
         @include for-desktop-up {
-            margin: 0 0 145px 0;
+            margin-bottom: 145px;
         }
     }
 
@@ -547,31 +545,31 @@ body {
     &__body {
         display: flex;
         flex-wrap: wrap;
-        padding: 20px 0 0 0;
+        padding-top: 20px;
 
         @include for-tablet-landscape-up {
-            padding: 60px 0 0 0;
+            padding-top: 60px;
             margin: 0 -9.5px 0 -9.5px;
         }
 
         @include for-big-desktop-up {
             margin: 0 -14.5px 0 -14.5px;
-            padding: 70px 0 0 0;
+            padding-top: 70px;
         }
 
     }
 
     &__row {
         width: 100%;
-        margin: 0 0 29.7px 0;
+        margin-bottom: 29.7px;
 
         @include for-tablet-landscape-up {
-            margin: 0 0 31px 0;
+            margin-bottom: 31px;
         }
 
         &_50 {
             width: 100%;
-            margin: 0 0 31px 0;    
+            margin-bottom: 31px;   
 
             @include for-tablet-portrait-up {
                 margin: 0 9.5px 33px 9.5px;
@@ -595,7 +593,7 @@ body {
             box-sizing: border-box;
             padding: 10.5px;
             border-radius: 10px;
-            border: 1px solid #F4F0E9;
+            border: 1px solid $color-form;
             appearance: none;
 
             @include standardFontStyle(400, $m-p-normal, $color-subtitle);
@@ -607,11 +605,11 @@ body {
             
             @include for-desktop-up {
                 &:hover {
-                    background-color: #F4F0E9;
+                    background-color: $color-form;
                 }
 
                 &:focus {
-                    background-color: #F4F0E9;
+                    background-color: $color-form;
                     border: 1px solid #A6A6A6;
                 }
              }
@@ -629,11 +627,10 @@ body {
             resize: none;
             text-transform: uppercase;
             letter-spacing: -0.03em;
-
         }
 
         label {
-            padding: 0 0 8px 0;
+            padding-bottom: 8px;
             display: inline-block;
             line-height: 142%;
 
@@ -667,7 +664,7 @@ body {
             box-sizing: border-box;
             padding: 13px;
             border-radius: 11.5px;
-            border: 1px solid #F4F0E9;
+            border: 1px solid $color-form;
             appearance: none;
             cursor: pointer;
 
@@ -679,7 +676,7 @@ body {
             }
 
             &:hover {
-                background-color: #F4F0E9;
+                background-color: $color-form;
             }
         }
     }
@@ -694,7 +691,7 @@ body {
 
     &__text {
         line-height: 142%;
-        padding: 0 0 9.5px 0;
+        padding-bottom: 9.5px;
 
         @include standardFontStyle(400, $m-p-normal, $color-secondary);
 
@@ -703,7 +700,7 @@ body {
             font-weight: 400;
             font-size: $p-normal;
             line-height: 142%;
-            padding: 0 0 7px 0;
+            padding-bottom: 7px;
         }
     }
 
@@ -714,7 +711,7 @@ body {
         border:2px solid #1B1F2B;
         text-align:center;
         line-height: 81.25%;
-        margin: 0 10px 0 0; 
+        margin-right: 10px; 
         cursor:pointer; 
         border-radius: 50%;
 
@@ -738,7 +735,7 @@ body {
             display: inline-flex;
             align-items:flex-start;
             line-height: 142%;
-            margin: 0 26px 0 0;
+            margin-right: 26px;
 
             @include standardFontStyle(400, $m-p-normal, $color-secondary);
 
@@ -754,7 +751,7 @@ body {
             -webkit-appearance: none;
             background-color: transparent;
             border: 2px solid #1B1F2B;
-            margin: 0 11px 0 0;
+            margin-right: 11px;
             display: inline-block;
             position: relative;
             cursor: pointer;
@@ -815,7 +812,7 @@ body {
             -webkit-appearance: none;
             background-color: transparent;
             border: 2px solid #1B1F2B;
-            margin: 0 10px 0 0;
+            margin-right: 10px;
             display: inline-block;
             position: relative;
             cursor: pointer;
@@ -824,11 +821,11 @@ body {
 
             @include for-tablet-landscape-up {
                 padding: 1.1rem;
-                margin: 0 11px 0 0;
+                margin-right: 11px;
             }
 
             @include for-desktop-up {
-                margin: 0 19px 0 0;
+                margin-right: 19px;
             }
         }
     
@@ -870,7 +867,7 @@ body {
 
             &:active {
                 text-decoration: underline;
-                color: #286562;;
+                color: #286562;
             }
         }
     }
@@ -878,19 +875,19 @@ body {
    
     &__btn {
         display: flex;
-        margin: 0 0 40px 0;
+        margin-bottom: 40px;
 
         @include for-tablet-landscape-up {
-            margin: 0 0 60px 0;
+            margin-bottom: 60px;
         }
     }
 
     &__btn-accept {
         display: flex;
-        margin: 0 10px 0 0;
+        margin-right: 10px;
 
         @include for-phone-up {
-            margin: 0 30px 0 0;
+            margin-right: 30px;
         }
         
         input {
@@ -958,14 +955,14 @@ body {
 }
 .feedback {
 
-    margin: 0 0 75px 0;
+    margin-bottom: 75px;
 
     @include for-tablet-landscape-up {
-        margin: 0 0 135px 0;
+        margin-bottom: 135px;
     }
 
     &__block-title{
-        padding: 0 0 20px 0;
+        padding-bottom: 20px;
         margin: 0 auto;
 
         @include for-tablet-portrait-up {
@@ -973,13 +970,13 @@ body {
         }
 
         @include for-tablet-landscape-up {
-            padding: 0 0 30px 0;
+            padding-bottom: 30px;
         }
 
     }
 
     &__block-subtitle {
-        padding: 0 0 50px 0;
+        padding-bottom: 50px;
         margin: 0 auto;
 
         @include for-tablet-portrait-up {
@@ -1118,15 +1115,15 @@ body {
 
 
     &__block-title {
-        padding:0 0 20px 0;
+        padding-bottom: 20px;
 
         @include for-tablet-landscape-up {
-            padding: 0 0 30px 0;
+            padding-bottom: 30px;
         }
     }
     
     &__block-subtitle {
-        padding: 0 0 50px 0;
+        padding-bottom: 50px;
         margin: 0 auto;
         max-width: 90%;
 
@@ -1138,7 +1135,6 @@ body {
         @include for-big-desktop-up {
             max-width: 22%;
         }
-
     }
 
     &__wrapper {
@@ -1259,15 +1255,15 @@ body {
 .stories {
 
     &__block-title {
-        padding:0 0 20px 0;
+        padding-bottom: 20px;
 
         @include for-tablet-landscape-up {
-            padding: 0 0 29px 0;
+            padding-bottom: 29px;
         }
     }
     
     &__block-subtitle {
-        padding: 0 0 50px 0;
+        padding-bottom: 50px;
         margin: 0 auto;
 
         @include for-tablet-portrait-up {
@@ -1282,10 +1278,10 @@ body {
     }
 
     &__catalog {
-        margin: 0 0 75px 0;
+        margin-bottom: 75px;
 
         @include for-tablet-landscape-up {
-            margin: 0 0 135px 0;
+            margin-bottom: 135px;
         }
     }
 
@@ -1357,13 +1353,13 @@ body {
     }
 
     &__card-subtitle {
-        margin: 0 0 0 30px;
+        margin-left: 30px;
         line-height: 142%;
         max-width: 50rem;
 
         @include for-tablet-landscape-up {
             max-width: 55.5rem;
-            margin: 0 0 0 60px;
+            margin-left: 60px;
         }
     }
 
@@ -1404,7 +1400,7 @@ body {
         background-position: 89% 50%;
         background-image: url(../image/icons/Vector.svg);
         background-repeat: no-repeat;
-        padding: 0 51px 0 0;
+        padding-right: 51px;
 
         @include for-tablet-landscape-up {
             padding: 7px 57px 7px 20px;
@@ -1454,10 +1450,10 @@ body {
 }
 
 .cta {
-    margin: 0 0 75px 0;
+    margin-bottom: 75px;
 
     @include for-tablet-landscape-up {
-        margin: 0 0 135px 0;
+        margin-bottom: 135px;
     }
 
     &__wrapper {
@@ -1502,7 +1498,7 @@ body {
 
     &__text {
         line-height: 120%;
-        margin: 31px 0 0 0;
+        margin-top: 31px;
         letter-spacing: 0.04em;
         text-align: center;
 
@@ -1520,7 +1516,7 @@ body {
 
     &__mail {
         text-align: center;
-        margin: 20px 0 0 0;
+        margin-top: 20px;
         line-height: 142%;
 
         @include standardFontStyle(400, $m-p-normal, $color-subtitle);
@@ -1580,23 +1576,23 @@ body {
 
     &__text {
         line-height: 142%;
-        margin: 21px 0 0 0;
+        margin-top: 21px;
         text-align: center;
 
         @include standardFontStyle(400, $m-p-normal, $color-subtitle);
         
         @include for-tablet-landscape-up {
             font-size: $p-normal;
-            margin: 30px 0 0 0;
+            margin-top: 30px;
         }
     }
 
     &__media {
-        margin: 11px 0 0 0;
+        margin-top: 11px;
         align-self: center;
 
         @include for-tablet-landscape-up {
-            margin: 31px 0 0 0;
+            margin-top: 31px;
         }
     }
 
@@ -1610,18 +1606,18 @@ body {
         }
 
         &:first-child {
-            margin: 0 24px 0 0;
+            margin-right: 24px;
 
             @include for-tablet-landscape-up {
-                margin: 0 36px 0 0;
+                margin-right: 36px;
             }
         }
 
         &_l {
-            margin: 0 16px 0 0;
+            margin-right: 16px;
 
             @include for-tablet-landscape-up {
-                margin: 0 27px 0 0;
+                margin-right: 27px;
             }
         }
     }
@@ -1667,14 +1663,14 @@ body {
 
             &:active {
                 text-decoration: underline;
-                color: #EFA501;
+                color: $color-active;
                 text-underline-offset: 6px;
             }
         }
     }
 }
 a.link_active {
-    color: #EFA501;
+    color: $color-active;
     outline: none;
     text-decoration: underline;
     text-underline-offset: 4px;
