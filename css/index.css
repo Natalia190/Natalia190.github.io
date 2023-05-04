@@ -469,6 +469,12 @@ body {
     border-radius: 50px;
   }
 }
+@media (min-width: 1200px) {
+  .card:active .card-btn a {
+    background-color: #EFA501;
+    border-radius: 50px;
+  }
+}
 
 .card-title {
   line-height: 120%;
@@ -523,11 +529,6 @@ body {
   .card-btn a {
     font-size: 2.3rem;
     line-height: 122%;
-  }
-}
-@media (min-width: 1200px) {
-  .card-btn a:active {
-    background-color: #EFA501;
   }
 }
 

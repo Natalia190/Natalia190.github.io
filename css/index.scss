@@ -115,7 +115,7 @@ body {
             }
 
             &:active {
-                background-color: #F8E6BE;
+                background-color: $color-headerBtn_active;
             }
         }
 
@@ -405,7 +405,14 @@ body {
     
     &:hover .card-btn a {
         @include for-desktop-up {
-            background-color: #286562;
+            background-color: $color-sage;
+            border-radius: 50px;
+            }
+    }
+
+    &:active .card-btn a{
+        @include for-desktop-up {
+            background-color: $color-active;
             border-radius: 50px;
             }
     }
@@ -444,7 +451,7 @@ body {
 
 }
 
-.card-btn a {
+.card-btn a{
     line-height: 142%;
     background-color: rgba(28,28,28,0);
 
@@ -454,13 +461,6 @@ body {
         font-size: $p-big;
         line-height: 122%;
     }
-
-    &:active {
-        @include for-desktop-up {
-            background-color: $color-active;
-        }
-    }
-
 }
 
 .wrapper {
@@ -589,7 +589,7 @@ body {
         input, textarea {
             width: 100%;
             resize: vertical;
-            background-color:#F9F7F4;
+            background-color: $color-formInput;
             box-sizing: border-box;
             padding: 10.5px;
             border-radius: 10px;
@@ -610,7 +610,7 @@ body {
 
                 &:focus {
                     background-color: $color-form;
-                    border: 1px solid #A6A6A6;
+                    border: 1px solid $color-subtitle;
                 }
              }
         }
@@ -660,7 +660,7 @@ body {
             background-position: 95% 50%;
             width: 100%;
             resize: vertical;
-            background-color:#F9F7F4;
+            background-color: $color-formInput;
             box-sizing: border-box;
             padding: 13px;
             border-radius: 11.5px;
@@ -708,7 +708,7 @@ body {
         width: 2rem;
         height: 2rem;
         display:inline-block;
-        border:2px solid #1B1F2B;
+        border:2px solid $color-secondary;
         text-align:center;
         line-height: 81.25%;
         margin-right: 10px; 
@@ -750,7 +750,7 @@ body {
             content:'';
             -webkit-appearance: none;
             background-color: transparent;
-            border: 2px solid #1B1F2B;
+            border: 2px solid $color-secondary;
             margin-right: 11px;
             display: inline-block;
             position: relative;
@@ -772,7 +772,7 @@ body {
             width: 0.9rem;
             height: 0.9rem;
             border-radius: 50%;
-            background-color: #1B1F2B;
+            background-color: $color-secondary;
 
             @include for-tablet-landscape-up {
                 top: 0.6rem;
@@ -811,7 +811,7 @@ body {
             content:'';
             -webkit-appearance: none;
             background-color: transparent;
-            border: 2px solid #1B1F2B;
+            border: 2px solid $color-secondary;
             margin-right: 10px;
             display: inline-block;
             position: relative;
@@ -837,7 +837,7 @@ body {
           left: 0.8rem;
           width: 0.5rem;
           height: 0.8rem;
-          border: solid #1B1F2B;
+          border: solid $color-secondary;
           border-width: 0 2px 2px 0;
           transform: rotate(45deg);
 
@@ -867,7 +867,7 @@ body {
 
             &:active {
                 text-decoration: underline;
-                color: #286562;
+                color: $color-sage;
             }
         }
     }
@@ -893,7 +893,7 @@ body {
         input {
             width: 13.4rem;
             height: 4.7rem;
-            background: #286562;
+            background: $color-sage;
             border-radius: 10px;
             line-height: 142%;
             justify-content: center;
@@ -909,11 +909,11 @@ body {
 
             @include for-desktop-up {
                 &:hover {
-                    background-color: #3B7E7B;
+                    background-color: $color-acceptBtn_hover;
                 }
 
                 &:active {
-                    background-color: #627F7E;
+                    background-color: $color-acceptBtn_active;
                 }
             }
         }
@@ -925,13 +925,13 @@ body {
         input {
             width: 13.4rem;
             height: 4.7rem;
-            background: #E0F0E5;
+            background: $color-resetBtn;
             border-radius: 10px;
             line-height: 142%;
             justify-content: center;
             cursor: pointer;
 
-            @include standardFontStyle(400, $m-p-normal, #286562);
+            @include standardFontStyle(400, $m-p-normal, $color-sage);
 
             @include for-tablet-landscape-up {
                 width: 23.5rem;
@@ -941,11 +941,11 @@ body {
 
             @include for-desktop-up {
                 &:hover {
-                    background-color: #F1F3F2;
+                    background-color: $color-resetBtn_hover;
                 }
 
                 &:active {
-                    background-color: #D9DFDB;
+                    background-color: $color-resetBtn_active;
                 }
             }
         }
@@ -1011,7 +1011,7 @@ body {
         display:flex;
         flex-direction: column;
         justify-content: space-between;
-        background: #F4F0E9;
+        background: $color-form;
         border-radius: 20px;
         margin: 9px 0 9px 0;
 
@@ -1441,7 +1441,7 @@ body {
             }
 
             &:active {
-                color: #EFA501;
+                color: $color-active;
                 text-decoration: underline;
                 text-underline-offset: 6px;
             }
@@ -1538,13 +1538,13 @@ body {
 
             &:active {
                 text-decoration: underline;
-                color: #286562;
+                color: $color-sage;
             }
         }
     }
 }
 .footer {
-    background-color: #F4F0E9;
+    background-color: $color-form;
     height: 9.5rem;
 
     @include for-tablet-landscape-up {
